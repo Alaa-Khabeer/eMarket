@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg  mask-custom mb-5">
+    <div class="container">
+      <a class="navbar-brand link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">eMarket</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <fa-icon [icon]="faB" style="color: #fff;"></fa-icon>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link link" routerLink="register" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Register</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" routerLink="login" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">Login</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav d-flex flex-row">
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link link position-relative" routerLink="cart" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact:true}">
+                <fa-icon [icon]="faS"></fa-icon>
+                <span class="position-absolute top-0 start-50 translate-middle badge rounded-pill bg-secondary">
+                  {{counter}}
+                </span>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!">
+              <fa-icon [icon]="faT" style="color: #fff;"></fa-icon>
+            </a>
+          </li>
+          <li class="nav-item me-3 me-lg-0">
+            <a class="nav-link" href="#!" >
+              <fa-icon [icon]="faI" style="color: #fff;"></fa-icon>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav>

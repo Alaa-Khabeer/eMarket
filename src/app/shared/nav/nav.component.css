@@ -1,0 +1,15 @@
+.mask-custom {
+  backdrop-filter: blur(5px);
+  background-color: #005387;
+}
+
+.navbar-brand {
+  font-size: 1.75rem;
+  letter-spacing: 3px;
+}
+.link{
+color:#fff;
+}
+.active-link{
+  color:#ace3ff;
+}

@@ -1,0 +1,66 @@
+<section class="vh-100">
+      <div class="container h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-lg-12 col-xl-11">
+            <div class="card text-black" style="border-radius: 25px;">
+              <div class="card-body p-md-5">
+                <div class="row justify-content-center">
+                  <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+    
+                    <form class="mx-1 mx-md-4" #login="ngForm" (ngSubmit)="loginSubmit(login)">
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <fa-icon [icon]="faE" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example3c">Your Email</label>
+                          
+                          <input type="email" required 
+                          email="true" id="form3Example3c" 
+                          class="form-control" name="email" 
+                          ngModel #email="ngModel"/>
+
+                        <div *ngIf="email.touched && email.invalid">
+                          <small class="text-danger" *ngIf="email.errors?.['required']">Email is required</small>
+                          <small class="text-danger" *ngIf="email.errors?.['email']">Email address is invalid</small>
+                        </div>
+                        </div>
+                      </div>
+    
+                      <div class="d-flex flex-row align-items-center mb-4">
+                        <fa-icon [icon]="faL" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                        
+                        <div class="form-outline flex-fill mb-0">
+                          <label class="form-label" for="form3Example4c">Password</label>
+                          <input type="password" required minlength="6" 
+                          id="form3Example4c" class="form-control" 
+                          name="password" ngModel
+                          #password="ngModel"/>
+                          <div *ngIf="password.touched && password.invalid">
+                            <small class="text-danger" *ngIf="password.errors?.['required']">Password is required</small>
+                          </div>
+                        </div>
+                      </div>
+    
+                      <div class="d-flex justify-content-center mb-3 mb-lg-4 flex-fill">
+                        <button type="submit" class="btn btn-primary btn-lg" [disabled]="login.invalid"><a href="/" style="color:white;text-decoration:none;">Log In</a></button>
+                      </div>
+                    </form>
+
+                    <!-- Register buttons -->
+                    <div class="text-center">
+                      <p>Don't have account? <a href="/register">Register</a></p>
+                  </div>
+
+                  </div>
+                  <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+    
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                      class="img-fluid" alt="">
+    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

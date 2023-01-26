@@ -1,0 +1,61 @@
+<section class="intro" *ngIf="counter > 0">
+    <div class="bg-image h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            
+            <div>
+              <p class="fw-bold fs-4">Cart</p>
+            </div>
+
+            <div class="col-12">
+              <div class="card">
+                <div class="card-body p-0">
+                  <div class="table-responsive table-scroll" data-mdb-perfect-scrollbar="true" style="position: relative;">
+                    <table class="table table-striped mb-0">
+                      <thead class="bg-secondary">
+                        <tr>
+                          <th scope="col">Image</th>
+                          <th scope="col">Name</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Quantity</th>
+                          <th scope="col">Remove</th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let obj of objs">
+                        <tr *ngFor="let product of products">
+                          <td *ngIf="product.id == obj.id">
+                            <img [src]="product.image" alt="" class="col-4 mt-2">
+                          </td>
+                          <td *ngIf="product.id == obj.id">{{product.name}}</td>
+                          <td *ngIf="product.id == obj.id">{{product.price | currency:"EGP ":'symbol':'3.0'}}</td>
+                          <td *ngIf="product.id == obj.id"> 
+                            <button type="button" class="btn btn-warning text-dark btn-sm px-3" (click)="increaseCounter(obj.id,product.price)">+</button>
+                            <span class="mx-3">{{obj.count}}</span> 
+                            <button type="button" class="btn btn-warning text-dark btn-sm px-3" (click)="decreaseCounter(obj.id,product.price)">-</button>
+                          </td>
+                          <td *ngIf="product.id == obj.id">
+                            <button type="button" class="btn btn-danger  btn-sm px-3" (click)="remove(obj.id, obj.count, product.price)">x</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+              <div class="text-end">
+                <p class="fw-bold fs-5">Total : <span>{{total|currency:"EGP "}}</span></p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="text-align:center;" *ngIf="counter == 0">
+    <p class=" fs-2 fst-italic" style="opacity:0.6">Empty cart</p>
+    <img src="./assets/empty-cart.png" style="opacity:0.5">
+</div>

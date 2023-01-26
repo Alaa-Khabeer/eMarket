@@ -1,0 +1,17 @@
+<div class="card">
+    <img [src]="productItem.image" alt="" class="card-img-top mt-2">
+    <div class="card-body">
+        <a class="dcard" [routerLink]="['product', productItem.id]">
+            <h6 class="card-title">{{productItem.name}}</h6>
+            </a>
+            <p class="card-text">{{productItem.price | currency:"EGP ":'symbol':'3.0'}}</p>
+            <p class="card-text" [ngSwitch] = "productItem.count">
+                <span  *ngSwitchCase="0" [ngStyle]="{'color' : 'red'}">{{productItem.count | countPipe}}</span>
+                <span  *ngSwitchDefault [ngStyle]="{'color' : 'green'}">{{productItem.count | countPipe}}</span>
+            </p>
+            <button class="btn btn-outline-primary btn-sm" (click)="callFuncs(productItem.id,productItem.price)" [disabled]="productItem.count === 0">Add To Cart</button>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">{{productItem.createdAt | date:'MMMM y'}}</small>
+      </div>
+</div>

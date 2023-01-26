@@ -1,0 +1,100 @@
+<section class="vh-100">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-12 col-xl-11">
+          <div class="card text-black" style="border-radius: 25px;">
+            <div class="card-body p-md-5">
+              <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
+                  
+                  <form class="mx-1 mx-md-4" [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <fa-icon [icon]="faU" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">Name</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="Name"/>
+                        <div *ngIf="registerFormControls['Name'].touched && registerFormControls['Name'].invalid">
+                          <small class="text-danger" *ngIf="registerFormControls['Name'].errors?.['required']">Name is required.</small>
+                          <small class="text-danger" *ngIf="registerFormControls['Name'].errors?.['minlength']">the minimum length for name is 3.</small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <fa-icon [icon]="faE" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example3c">Email</label>
+                        <input type="email" id="form3Example3c" class="form-control" formControlName="Email"/>
+                        <div *ngIf="registerFormControls['Email'].touched && registerFormControls['Email'].invalid">
+                          <small class="text-danger" *ngIf="registerFormControls['Email'].errors?.['required']">Email is required.</small>
+                          <small class="text-danger" *ngIf="registerFormControls['Email'].errors?.['email']">Wrong pattern for email.</small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <fa-icon [icon]="faU" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example1c">User Name</label>
+                        <input type="text" id="form3Example1c" class="form-control" formControlName="UserName"/>
+                        <div *ngIf="registerFormControls['UserName'].touched && registerFormControls['UserName'].invalid">
+                          <small class="text-danger" *ngIf="registerFormControls['UserName'].errors?.['required']">User name is required.</small>
+                          <small class="text-danger" *ngIf="registerFormControls['UserName'].errors?.['pattern']">The user name mustn't contain any white spaces.</small>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <fa-icon [icon]="faL" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4c">Password</label>
+                        <input type="password" id="form3Example4c" class="form-control" formControlName="Password"/>
+                        <div *ngIf="registerFormControls['Password'].touched && registerFormControls['Password'].invalid">
+                          <small class="text-danger" *ngIf="registerFormControls['Password'].errors?.['required']">Password is required</small>
+                          <small class="text-danger" *ngIf="registerFormControls['Password'].errors?.['pattern']">Password length must be 8 or more characters, contains at least one lowercase, one uppercase, one digit and special character.</small>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="d-flex flex-row align-items-center mb-4">
+                      <fa-icon [icon]="faK" class="fa-lg me-3 fa-fw mt-4"></fa-icon>
+                      <div class="form-outline flex-fill mb-0">
+                        <label class="form-label" for="form3Example4cd">Confirm your password.</label>
+                        <input type="password" id="form3Example4cd" class="form-control" formControlName="ConfirmPassword"/>
+                        <div *ngIf="registerFormControls['ConfirmPassword'].touched && registerFormControls['ConfirmPassword'].invalid">
+                          <small class="text-danger" *ngIf="registerFormControls['ConfirmPassword'].errors?.['required']">This is required.</small>
+                          <small class="text-danger" *ngIf="registerFormControls['ConfirmPassword'].errors?.['confirmedValidator']">Password and Confirm Password must be match.</small>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="form-check d-flex justify-content-center mb-5">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" />
+                        <label class="form-check-label" for="form2Example3">
+                          I agree all statements in <a href="#!">Terms of service</a>
+                        </label>
+                      </div>
+  
+                    <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+                      <button type="submit" class="btn btn-primary btn-lg" [disabled]="registerForm.invalid"><a href="/" style="color:white;text-decoration:none;">Register</a></button>
+                    </div>
+                  </form>
+                  <!-- login button -->
+                  <div class="text-center">
+                    <p>Already have account? <a href="/login">log in</a></p>
+                </div>
+
+                </div>
+                <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
+  
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
+                    class="img-fluid" alt="">
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
